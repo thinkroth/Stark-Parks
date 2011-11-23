@@ -1,0 +1,54 @@
+.home {
+    text-align: center;
+}
+
+.home h1 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.home p {
+    color: #666;
+    font-size: 0.8em;
+    line-height: 1.6em;
+    margin: 10px 20px 20px 20px;
+}
+
+.home img {
+    margin-top: -10px;
+}
+
+.home h2 {
+    color: #999;
+    font-size: 0.7em;
+}
+
+.home #hidden {
+	height: 40px;
+}
+
+
+.card {
+    text-align: center;
+    font-size: 72px;
+    padding: 80px 40px;
+}
+
+.x-phone .card {
+    padding: 15px;
+    font-size: 36px;
+}
+
+.card p {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.x-phone .card p {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.card1 {
+	background:url('map.png') no-repeat;
+}

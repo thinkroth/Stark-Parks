@@ -1,0 +1,170 @@
+$base-color: #006600;
+$list-header-color: #006600;
+$list-header-bg-color: #006600;
+$active-color: #666;
+
+// For performance, I'm removing default styles
+// and re-adding with mixins below (sencha-x-ui)
+$include-default-icons: true;
+$include-button-uis: true;
+$include-toolbar-uis: true;
+$include-tabbar-uis: true;
+$include-top-tabs: false;
+
+$spinner-color: $base-color;
+
+$index-bar-bg-color: #006600;
+$index-bar-color: #006600;
+
+@import '../../default/all';
+@import '../../default/widgets/_buttons';
+
+@import 'spinner';
+
+@include sencha-panel(false);
+@include sencha-buttons;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-indexbar;
+@include sencha-msgbox;
+@include sencha-sheet;
+@include sencha-list;
+@include sencha-layout;
+
+@include pictos-iconmask('action');
+@include pictos-iconmask('add');
+@include pictos-iconmask('arrow_down');
+@include pictos-iconmask('arrow_left');
+@include pictos-iconmask('arrow_right');
+@include pictos-iconmask('arrow_up');
+@include pictos-iconmask('compose');
+@include pictos-iconmask('delete');
+@include pictos-iconmask('organize');
+@include pictos-iconmask('refresh');
+@include pictos-iconmask('reply');
+@include pictos-iconmask('search');
+@include pictos-iconmask('settings');
+@include pictos-iconmask('star');
+@include pictos-iconmask('trash');
+@include pictos-iconmask('maps');
+@include pictos-iconmask('locate');
+@include pictos-iconmask('home');
+
+@include sencha-button-ui('action', $active-color);
+
+@include sencha-tabbar-ui('gray', $base-color, $base-gradient, darken($base-color, 1%));
+@include sencha-toolbar-ui('dark', lighten($base-color, 10%), $base-gradient);
+@include sencha-toolbar-ui('gray', #ccc);
+
+.x-mask.x-mask-gray {
+  background-color: #006600;
+}
+
+.x-spinner {
+  margin-top: .7em;
+  font-size: 200%;
+}
+
+.avatar {
+  background-color: #eee;
+  background-position: center center;
+  @include border-radius(.5em);
+  -webkit-box-shadow: rgba(#fff,.2) 0 1px 0;
+  margin-right: 10px;
+  width: 45px;
+  height: 45px;
+  background-size: 47px auto;
+  background-image: inline-image('avatar.jpg');
+}
+
+.thumb {
+  width: 2.6em;
+  height: 2.6em;
+  background-color: #eee;
+  background-size: 2.6em auto;
+  background-position: center center;
+  margin: -.6em 10px -.6em -.8em;
+}
+
+.x-toolbar.small_title {
+  font-size: .6em;
+  border-top: 1px solid #bbb;
+
+  .x-toolbar-title {
+    text-align: left;
+    padding: 0 1.3em;
+  }
+} 
+
+.x-list-item-body {
+  @include display-box;
+  @include box-orient(horizontal);
+  @include box-align(center);
+  
+  strong {
+    font-weight: bold;
+  }
+  
+  .name {
+    @include box-flex(1);
+    font-weight: bold;
+    font-size: 1.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .secondary {
+    display: block;
+    font-size: 10px !important;
+    color: $base-color;
+    margin-left: .5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .tertiary {
+    font-weight: normal;
+    color: #999;
+  }
+  
+  .tweet {
+    display: block;
+    @include box-flex(1);
+  }
+}
+
+body, .x-html, .session-detail {
+  background-color: #fff;
+}
+
+.x-html {
+  h3 {
+    small {
+      color: $base-color;
+    }
+    margin-bottom: .2em;
+  }
+  h4 {
+    font-size: 1.1em;
+    line-height: 1.1em;
+    color: #999;
+    margin-bottom: .5em;
+  }
+
+}
+
+a, .link {
+  color: $base-color !important;
+}
+a:visited {
+  color: lighten($base-color, 15%) !important;
+}
+
+// .x-button.x-button-plain.favestar.favorited img {
+//   @include background-gradient(#f5d249, 'glossy');
+// }
+
