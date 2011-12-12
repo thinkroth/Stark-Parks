@@ -43,7 +43,7 @@ thinkroth.App = Ext.extend(Ext.TabPanel, {
 						dock : 'bottom',
 						xtype: 'panel',
 						cls: 'home',
-						html: 'Swipe to view'
+						html: this.swipeMessage
 					}
 				]
 			},

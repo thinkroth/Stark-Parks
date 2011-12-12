@@ -13,7 +13,8 @@ Ext.setup({
 				'./maps/SippoLake2010.png',
 				'./maps/Walborn2010.png',
 				'./maps/WestBranchTrail2011.png'
-			]
+			],
+			swipeMessage: 'Swipe to view'
 		});
 	}
 });
