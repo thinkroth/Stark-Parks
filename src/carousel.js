@@ -1,4 +1,3 @@
-// Ext.ns('Jarvus.mobile');
 
 thinkroth.views.PinchCarousel = Ext.extend(Ext.Carousel, {
 
@@ -18,8 +17,8 @@ thinkroth.views.PinchCarousel = Ext.extend(Ext.Carousel, {
 			// initialize items from a store if provided
 			this.store.each(function(imageRecord) {
 				this.addImage({
-					imageSrc: this.imageField ? imageRecord.get(this.imageField) : false
-					,previewSrc: this.previewField ? imageRecord.get(this.previewField) : false
+					imageSrc: this.imageField ? imageRecord.get(this.imageField) : false,
+					previewSrc: this.previewField ? imageRecord.get(this.previewField) : false
 				});
 			}, this);
 		}
@@ -32,13 +31,13 @@ thinkroth.views.PinchCarousel = Ext.extend(Ext.Carousel, {
 		thinkroth.views.PinchCarousel.superclass.initComponent.apply(this, arguments);
 		
 		
-	}
+	},
 
-	,addImage: function(image, doLayout) {
+	addImage: function(image, doLayout) {
 
 		image = Ext.apply({
-			xtype: 'imageviewer'
-			,loadingMask: this.loadingMask
+			xtype: 'imageviewer',
+			loadingMask: this.loadingMask
 		}, typeof image == "string" ? {imageSrc: image} : image);
 		
 		if(this.rendered)
@@ -52,10 +51,10 @@ thinkroth.views.PinchCarousel = Ext.extend(Ext.Carousel, {
 		{
 			this.items.push(image);
 		}
-	}	
+	},
 
 	// suppress carousel drag on multi-touch
-	,onDragStart: function(e) {
+	onDragStart: function(e) {
 		if(e.targetTouches.length == 1)
 			Ext.Carousel.prototype.onDragStart.call(this, e);
 /*
@@ -64,8 +63,8 @@ thinkroth.views.PinchCarousel = Ext.extend(Ext.Carousel, {
 		else
 			console.log('suppressing drag start');
 */
-	}
-	,onDrag: function(e) {
+	},
+	onDrag: function(e) {
 		if(e.targetTouches.length == 1)
 			Ext.Carousel.prototype.onDrag.call(this, e);
 /*
@@ -74,8 +73,8 @@ thinkroth.views.PinchCarousel = Ext.extend(Ext.Carousel, {
 		else
 			console.log('suppressing drag');
 */
-	}
-	,onDragEnd: function(e) {
+	},
+	onDragEnd: function(e) {
 		if(e.targetTouches.length < 2)
 			Ext.Carousel.prototype.onDragEnd.call(this, e);
 /*

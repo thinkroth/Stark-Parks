@@ -1,4 +1,3 @@
-// Ext.ns('Jarvus.mobile');
 
 thinkroth.views.ImageViewer = Ext.extend(Ext.Component, {
 
@@ -51,7 +50,7 @@ thinkroth.views.ImageViewer = Ext.extend(Ext.Component, {
 					backgroundImage: 'url('+this.previewSrc+')',
 					backgroundPosition: 'center center',
 					backgroundRepeat: 'no-repeat',
-					webkitBackgroundSize: 'contain',
+					webkitBackgroundSize: 'contain'
 				});
 			}
 
@@ -87,7 +86,7 @@ thinkroth.views.ImageViewer = Ext.extend(Ext.Component, {
 		this.viewportHeight = this.viewportHeight || this.getHeight() || this.ownerCt.body.getHeight();
 			
 		// grab image size
-		this.imgWidth = this.imgEl.dom.width
+		this.imgWidth = this.imgEl.dom.width;
 		this.imgHeight = this.imgEl.dom.height;
 				
 		// calculate and apply initial scale to fit image to screen
@@ -145,7 +144,7 @@ thinkroth.views.ImageViewer = Ext.extend(Ext.Component, {
 		
 		// calculate translation needed to counteract new origin and keep image in same position on screen
 		this.translateX += (-1 * ((this.imgWidth*(1-this.scale)) * (this.originFullImgX/this.imgWidth)));
-		this.translateY += (-1 * ((this.imgHeight*(1-this.scale)) * (this.originFullImgY/this.imgHeight)))
+		this.translateY += (-1 * ((this.imgHeight*(1-this.scale)) * (this.originFullImgY/this.imgHeight)));
 	
 		// apply new origin
 		this.setOrigin(this.originFullImgX, this.originFullImgY);
@@ -192,7 +191,7 @@ thinkroth.views.ImageViewer = Ext.extend(Ext.Component, {
 			return false;
 		
 		// set scale and translation
-		if(this.scale >= .9)
+		if(this.scale >= 0.9)
 		{
 			// zoom out to base view
 			this.scale = this.baseScale;
@@ -259,13 +258,13 @@ thinkroth.views.ImageViewer = Ext.extend(Ext.Component, {
 			this.imgEl.dom.style.webkitTransform = 
 				//'translate('+fixedX+'px, '+fixedY+'px)'
 				//+' scale('+fixedScale+','+fixedScale+')';
-				'matrix('+fixedScale+',0,0,'+fixedScale+','+fixedX+','+fixedY+')'
+				'matrix('+fixedScale+',0,0,'+fixedScale+','+fixedX+','+fixedY+')';
 		}
 		else
 		{
 			this.imgEl.dom.style.webkitTransform =
-				'translate3d('+fixedX+'px, '+fixedY+'px, 0)'
-				+' scale3d('+fixedScale+','+fixedScale+',1)';
+				'translate3d('+fixedX+'px, '+fixedY+'px, 0)' +
+				' scale3d('+fixedScale+','+fixedScale+',1)';
 		}
 		
 	},
